@@ -31,8 +31,6 @@ if (isset($_POST['adminLogin'])) {
                 window.location = "index.php";
             </script>
 
-
-
         <?php
             $_SESSION['u_email'] = $u_email;
             $_SESSION['id'] = $row['id'];
