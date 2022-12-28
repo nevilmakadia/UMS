@@ -13,7 +13,7 @@ if (isset($_POST['adminLogin'])) {
     $u_password = $_POST['u_password'];
     $u_password = md5($u_password);
 
-    $logiinQuery = "SELECT * FROM `user_master` WHERE `u_email` = '$u_email' AND `roll_id` = 1";
+    $logiinQuery = "SELECT * FROM `user_master` WHERE `u_email` = '$u_email' AND `roll_id` = 1 AND `user_status` = 1";
     $loginResult = mysqli_query($conn, $logiinQuery);
 
     if ($loginResult == true) {
@@ -45,7 +45,7 @@ if (isset($_POST['adminLogin'])) {
     } else {
         ?>
         <script>
-            alert("No username found! \nMaybe you are not Admin");
+            alert("Incorrect credentials!");
             window.location = "adminLogin.php";
         </script>
 <?php
